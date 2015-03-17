@@ -1,0 +1,18 @@
+
+Implement a solution that is able to run a four player game of cricket cut-throat darts game. 
+
+http://en.wikipedia.org/wiki/Cricket_%28darts%29
+
+Cricket Numbers
+
+Cricket uses the numbers 15 to 20 (or sometimes 10 to 20, and less frequently a predetermined selection of numbers) and the bull's-eye. To open or close a number, it must have been scored 3 times in any fashion, on one or more turns. Hitting the triple will open or close a number in one throw; a single and the double will open or close it in two throws or three singles will open or close it in three throws. Except in strict variants which count down from 20 to 15, numbers do not have to be opened or closed in any particular order and several numbers can be hit in the same turn. A scoreboard is used to keep track of the hits on all the numbers. Hitting a number once is shown by placing a slash (/) beside the number, second hit by turning the slash to an X, and the third by a circle (O) around the X.
+
+Scoring
+
+The object is for a player to hit each number and the bullseye three times. Doubles count as two hits and triples as three.[1] The first player to hit a number three times owns that number and it is said to be opened. Further hits on the opened number score that number of points (e.g. triple 20 gains 60 points) until the opponent also hits that number three times and closes it, then that number is removed from play. The double ring scores double the number's value and the treble (inner) ring scores triple the number's value. The outer bullseye ring is worth 25 points and the inner circle (or double bull) is worth 50. Once a player has opened or closed all the required numbers and bull and has equal or more points than his opponent, that player wins. Also, if a player scores and does not record it before the next player goes, that score does not count.
+
+Alternatively, cut-throat style scoring can be used, in which case points are undesirable; hitting a number that is opened results in points being given to any other players who do not have that number closed, and the lowest score wins.
+
+Playing
+
+To start the game, each player or one player from each team throws one dart. This is known as the "diddle". The player whose dart lands closest to the center goes first. Generally, if both players darts are in the same section of the bullseye or in the event of a tie, each player throws another dart until there is an obvious winner. During a player's turn, the player throws three darts. After the last dart, the player's score is totaled. Any number that has not been scored three times is considered to be open.
