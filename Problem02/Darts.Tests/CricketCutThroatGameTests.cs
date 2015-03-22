@@ -37,7 +37,7 @@ namespace Darts.Tests
         public void WhenCreatingGameWithAllowedNumberOfPlayers_ShouldNotThrowException(
             int playersNumber)
         {
-            var game = new CricketCutThroatGame(playersNumber);
+            new CricketCutThroatGame(playersNumber);
         }
 
         [Test]
