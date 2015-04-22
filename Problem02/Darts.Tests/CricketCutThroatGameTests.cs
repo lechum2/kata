@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using Darts.Exceptions;
+using NUnit.Framework;
 using System;
 
 namespace Darts.Tests
@@ -46,11 +47,8 @@ namespace Darts.Tests
         public void WhenCreatingGameWithNotAllowedNumberOfPlayers_ShouldThrowException(
             int playersNumber)
         {
-            var exception = Assert.Throws<ArgumentOutOfRangeException>(
+            var exception = Assert.Throws<ForbiddenNumberOfPlayersException>(
                 () => new CricketCutThroatGame(playersNumber));
-            Assert.AreEqual(
-                "Allowed number of players is 2, 3, 4.\r\nParameter name: playersNumber",
-                exception.Message);
         }
 
         [Test]
@@ -73,11 +71,8 @@ namespace Darts.Tests
         {
             var game = new CricketCutThroatGame(4);
 
-            var exception = Assert.Throws<ArgumentOutOfRangeException>(
+            var exception = Assert.Throws<NumberHitOutOfRangeException>(
                 () => game.ThrowDart(numberHit));
-            Assert.AreEqual(
-                "Numbers allowed to hit are form 1 to 20 and 25.\r\nParameter name: numberHit",
-                exception.Message);
         }
 
         [Test]
@@ -118,11 +113,8 @@ namespace Darts.Tests
         {
             CreateFourPlayerGame();
 
-            var exception = Assert.Throws<ArgumentOutOfRangeException>(
+            var exception = Assert.Throws<MultiplierOutOfRangeException>(
                 () => game.ThrowDart(numberHit, multiplier));
-            Assert.AreEqual(
-                "Allowed multipliers for number 25 are 1 and 2, for other numbers 1, 2, and 3.\r\nParameter name: multiplier",
-                exception.Message);
         }
 
         [Test]
@@ -176,11 +168,8 @@ namespace Darts.Tests
             game.ThrowDart(19).ThrowDart(19).ThrowDart(19);
             game.ThrowDart(19).ThrowDart(19).ThrowDart(19);
 
-            var exception = Assert.Throws<InvalidOperationException>(
+            var exception = Assert.Throws<GameAlreadyFinishedException>(
                 () => game.ThrowDart(17));
-            Assert.AreEqual(
-                "Game has finished. Create a new game.",
-                exception.Message);
         }
 
         [Test]
