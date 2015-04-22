@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Darts.Exceptions;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -25,11 +25,7 @@ namespace Darts
         {
             if (!allowedNumberOfPlayers.Contains(playersNumber))
             {
-                throw new ArgumentOutOfRangeException(
-                    "playersNumber",
-                    String.Format(
-                        "Allowed number of players is {0}.",
-                        String.Join(", ", allowedNumberOfPlayers)));
+                throw new ForbiddenNumberOfPlayersException(allowedNumberOfPlayers);
             }
 
             List<Player> players = new List<Player>();
@@ -98,7 +94,7 @@ namespace Darts
         {
             if (IsGameFinished)
             {
-                throw new InvalidOperationException("Game has finished. Create a new game.");
+                throw new GameAlreadyFinishedException();
             }
         }
 
@@ -178,16 +174,12 @@ namespace Darts
         {
             if (!IsOnTarget(numberHit))
             {
-                throw new ArgumentOutOfRangeException(
-                    "numberHit",
-                    "Numbers allowed to hit are form 1 to 20 and 25.");
+                throw new NumberHitOutOfRangeException();
             }
 
             if (!IsMultiplierAllowed(numberHit, multiplier))
             {
-                throw new ArgumentOutOfRangeException(
-                    "multiplier",
-                    "Allowed multipliers for number 25 are 1 and 2, for other numbers 1, 2, and 3.");
+                throw new MultiplierOutOfRangeException();
             }
         }
 
